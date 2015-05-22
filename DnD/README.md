@@ -4,17 +4,29 @@ Drag-and-Drop widget for the js api. Adapted from [Drag and drop to display data
 
 
 ```javascript
-dnd: {
-  include: true,
-  id: 'dnd',
-  type: 'titlePane',
-  canFloat: true,
-  path: 'gis/dijit/DnD',
-  title: 'Drag and Drop',
-  options: {
-    map: true
-  }
-}
+DnD: {
+    include: true,
+    id: 'dragNdrop',
+    type: 'titlePane',
+    path: 'gis/dijit/DnD',
+    canFloat: false,
+    title: 'Add data',
+    open: false,
+    position: 11,
+    options: {
+        map: true,
+        line: {
+            style: 'solid', //dash,dashdot,dashdotdot,dot,longdash,longdashdot,null,shortdash,shortdashdot,shortdashdotdot,shortdot,solid
+            color: [255,128,0,1.0], // [red, green, blue, alpha range 0 to 1]
+            thickness: 2 //thickness in pixels
+        },
+        polygon: {
+            outlineColor: [255, 128, 0, 1.0],
+            outlineThickness: 2,
+            shadingColor: [255, 128, 0, 0.2]
+        }
+    }
+},
 ```
 Available drag-and-drop sources:
 - CSV
